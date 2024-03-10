@@ -1,5 +1,7 @@
-import 'package:dopingnature_mobile_app/home.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
+
+import 'home_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/your_video.mp4')
+    _controller = VideoPlayerController.asset('assets/sample.mp4')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized
         setState(() {});
@@ -23,11 +25,11 @@ class _SplashScreenState extends State<SplashScreen> {
       });
 
     // Simulate a delay before navigating to the second page
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 4), () {
       _controller.pause();
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => SecondPage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     });
   }
@@ -43,10 +45,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: _controller.value.isInitialized
-            ? AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              )
+            // ? AspectRatio(
+            //     aspectRatio: 1.2,
+            //     child: VideoPlayer(_controller),
+            //   )
+            ? VideoPlayer(_controller)
             : const CircularProgressIndicator(),
       ),
     );

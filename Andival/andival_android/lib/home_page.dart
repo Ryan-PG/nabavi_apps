@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
+class HomePage extends StatefulWidget {
+  const HomePage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   late WebViewController _controller;
   double webProgress = 0;
 
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Scaffold(
               body: Center(
                 child: WebView(
-                  initialUrl: 'https://boooq.ir',
+                  initialUrl: 'https://andival.ir',
                   // javascriptMode: JavascriptMode.unrestricted,
                   onWebViewCreated: (WebViewController webViewController) {
                     _controllerCompleter.future

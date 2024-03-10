@@ -1,5 +1,6 @@
-import 'package:dopingnature_mobile_app/splash.dart';
 import 'package:flutter/material.dart';
+
+import 'splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Andival',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blue,
       ),
       home: const SplashScreen(),
     );

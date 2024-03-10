@@ -1,5 +1,6 @@
-import 'package:dopingnature_mobile_app/splash.dart';
 import 'package:flutter/material.dart';
+
+import 'splash.dart';
 
 void main() {
   runApp(const MyApp());
