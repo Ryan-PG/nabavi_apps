@@ -47,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                         .then((value) => _controller = value);
                     _controllerCompleter.complete(webViewController);
                   },
+                  javascriptMode: JavascriptMode.unrestricted,
                   onProgress: (progress) => setState(() {
                     webProgress = progress / 100;
                   }),
